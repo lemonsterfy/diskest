@@ -1,0 +1,59 @@
+# Diskest Default Configuration
+
+global:
+  # Directory for temporary test files
+  test_directory: "/tmp/diskest_test"
+  # Enable verbose logging
+  verbose: false
+
+fio:
+  # Size of the test file
+  size: "4G"
+  # Duration of each test
+  runtime: "300s"
+  # Ramp-up time before measurements
+  ramp_time: "10s"
+  # Block sizes for different tests
+  block_sizes:
+    sequential: "1M"
+    random: "4K"
+  # I/O depths for different tests
+  io_depths:
+    sequential: 32
+    random: 64
+  # Number of jobs to run concurrently
+  num_jobs: 4
+
+sysbench:
+  # Total size of test files
+  file_total_size: "4G"
+  # Duration of each test
+  runtime: 300
+  # Block sizes for different tests
+  block_sizes:
+    sequential: "1M"
+    random: "4K"
+  # Read/write ratio for mixed tests (higher number means more reads)
+  rw_ratio: 2
+  # Number of files to test with
+  num_files: 4
+
+reporting:
+  # Default report format
+  default_format: "cli"
+  # Generate charts in reports
+  generate_charts: true
+  # Output directory for reports
+  output_directory: "~/diskest_reports"
+
+advanced:
+  # Enable CPU governor control (requires root)
+  control_cpu_governor: false
+  # Desired CPU governor during tests
+  cpu_governor: "performance"
+  # Drop caches before each test (requires root)
+  drop_caches: true
+  # Number of times to repeat each test
+  test_iterations: 1
+  # Delay between test iterations (in seconds)
+  iteration_delay: 5
