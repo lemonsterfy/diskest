@@ -44,9 +44,6 @@ diskest = ["data/*.yaml"]
 [tool.setuptools_scm]
 write_to = "diskest/_version.py"
 
-[project.optional-dependencies]
-dev = {file = ["requirements-dev.txt"]}
-
 [tool.pytest.ini_options]
 addopts = "-v --cov=diskest --cov-report=term-missing"
 testpaths = ["tests"]
