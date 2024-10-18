@@ -156,3 +156,6 @@ diskest_reports/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Dynamically generated version files
+*/_version.py
