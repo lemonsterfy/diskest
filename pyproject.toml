@@ -44,6 +44,8 @@ diskest = ["data/*.yaml"]
 
 [tool.setuptools_scm]
 write_to = "diskest/_version.py"
+version_scheme = "post-release"
+local_scheme = "no-local-version"
 
 [tool.pytest.ini_options]
 addopts = "-v --cov=diskest --cov-report=term-missing"
