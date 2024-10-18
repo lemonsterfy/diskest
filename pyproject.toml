@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -41,14 +41,11 @@ dependencies = {file = ["requirements.txt"]}
 [tool.setuptools.package-data]
 diskest = ["data/*.yaml"]
 
+[tool.setuptools_scm]
+write_to = "diskest/_version.py"
+
 [project.optional-dependencies]
-dev = [
-    "pytest==8.3.3",
-    "pytest-cov==5.0.0",
-    "pytest-mock==3.14.0",
-    "black==24.10.0",
-    "flake8==7.1.1",
-]
+dev = {file = ["requirements-dev.txt"]}
 
 [tool.pytest.ini_options]
 addopts = "-v --cov=diskest --cov-report=term-missing"
